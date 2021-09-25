@@ -1,0 +1,2 @@
+importFrom(stats, bw.nrd, var,dnorm,pnorm)
+export("delta.e.estimate", "delta.h.estimate", "Kern.FUN", "kf", "mu1swy.h", "pred.smooth.2","VTM")
