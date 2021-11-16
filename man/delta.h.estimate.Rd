@@ -58,9 +58,16 @@ Layla Parast
 
 \examples{
 data(example.data)
+\donttest{
 delta.h.estimate(sone = example.data$s1, szero = example.data$s0, wone = example.data$w1,
  wzero = example.data$w0, szerop = example.data$s0.p, wzerop = example.data$w0.p, 
  yzerop = example.data$y0.p)
+}
+#reducing dimension of example data to provide a computationally faster example
+delta.h.estimate(sone = example.data$s1[1:200], szero = example.data$s0[1:200], wone =
+ example.data$w1[1:200], wzero = example.data$w0[1:200], szerop = 
+ example.data$s0.p[1:200], wzerop = example.data$w0.p[1:200], yzerop = 
+ example.data$y0.p[1:200])
 }
 \keyword{nonparametric}
 \keyword{test}
