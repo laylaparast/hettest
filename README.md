@@ -8,4 +8,4 @@
 
 More details on the method are available in Details are described in Parast, L., Cai, T., & Tian, L. (2023). Using a surrogate with heterogeneous utility to test for a treatment effect. Statistics in Medicine, 42(1), 68-88, [doi:10.1002/sim.9602](https://doi.org/10.1002/sim.9602). 
 
-Go here to view a tutorial for this package: [hettest Tutorial](https://htmlpreview.github.io/?https://github.com/laylaparast/hettest/blob/main/hettest_tutorial.html). We also have a shiny app implementing these methods [here](https://parastlab.shinyapps.io/hettestApp/).  
+Go here to view a tutorial for this package: [hettest Tutorial](https://htmlpreview.github.io/?https://github.com/laylaparast/hettest/blob/main/hettest_tutorial.html). We also have a shiny app implementing this method [here](https://parastlab.shinyapps.io/hettestApp/).  
