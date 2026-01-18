@@ -1,0 +1,54 @@
+---
+title: "Tutorial for main functions in hettest package"
+output:
+  html_document:
+    self_contained: true
+---
+
+```{r global_options, echo=FALSE}
+knitr::opts_chunk$set(fig.width=7, warning=FALSE, tidy=TRUE, tidy.opts=list(width.cutoff=60))
+```
+
+If you are viewing the html version of this tutorial, you can find the R markdown file here: <https://github.com/laylaparast/hettest>. It is the file called hettest_tutorial.Rmd. In this tutorial, we will go through an example using the main functions in the **hettest** package. First, install the package from CRAN and load it. 
+
+```{r results = "hide", message=FALSE}
+#install.packages("hettest")
+library(hettest)
+```
+
+This package provides a method to test for a treatment effect using surrogate marker information accounting for heterogeneity in the utility of the surrogate. Details are described in Parast, L., Cai, T., & Tian, L. (2023). Using a surrogate with heterogeneous utility to test for a treatment effect. Statistics in Medicine, 42(1), 68-88, <https://doi.org/10.1002/sim.9602>. 
+
+The main function is `delta.h.estimate` which tests for a treatment effect on the primary outcome using surrogate
+marker information, accounting for heterogeneity which is learned from a prior study. This function expects the following: (1) `sone`, the surrogate marker in the treated group in the current study; (2) `szero`, the surrogate marker in the control group in the current study; (3) `wone`, baseline covariate in the treated group in the current study; (4) `wzero`, the baseline covariate in the control group in the current study; (5) `szerop`, the surrogate marker in the control group in the prior study; (6) `yzerop`, the primary outcome in the control group in the prior study; and (7) `wzero`, the baseline covariate in the control group in the prior study.
+
+Let's use the example data provided in the package, `example.data`: 
+
+```{r}
+data(example.data)
+names(example.data)
+```
+
+Now let's use the main function to tests for a treatment effect on the primary outcome using surrogate
+marker information in the current study, accounting for heterogeneity
+
+```{r}
+delta.h.estimate(sone = example.data$s1, szero = example.data$s0, wone = example.data$w1,
+wzero = example.data$w0, szerop = example.data$s0.p, wzerop = example.data$w0.p,
+yzerop = example.data$y0.p)
+```
+
+First, `delta.h` is the estimated treatment effect using surrogate marker information, account for heterogeneity; `sd.h` is the estimated standard error of the treatment effect estimate; `test.statistic.h` is the test statistic; and `p.value.h` is the corresponding p-value for the test statistic.
+
+The function `delta.e.estimate` estimates this treatment effect ignoring heterogeneity: 
+
+```{r}
+delta.e.estimate(sone = example.data$s1, szero = example.data$s0, szerop = example.data$s0.p,
+yzerop = example.data$y0.p)
+```
+
+Similar to the prior function, this function provides the treatment effect quantity, standard error, test statistic, and p-value.
+
+
+That's all for now!
+
+---------
