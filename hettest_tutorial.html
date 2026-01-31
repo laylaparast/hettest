@@ -384,9 +384,9 @@ covariate in the control group in the prior study.</p>
 <pre class="r"><code>data(example.data)
 names(example.data)</code></pre>
 <pre><code>## [1] &quot;w0.p&quot; &quot;s0.p&quot; &quot;y0.p&quot; &quot;w1&quot;   &quot;w0&quot;   &quot;s1&quot;   &quot;s0&quot;   &quot;y1&quot;   &quot;y0&quot;</code></pre>
-<p>Now let’s use the main function to tests for a treatment effect on
-the primary outcome using surrogate marker information in the current
-study, accounting for heterogeneity</p>
+<p>Now let’s use the main function to test for a treatment effect on the
+primary outcome using surrogate marker information in the current study,
+accounting for heterogeneity</p>
 <pre class="r"><code>delta.h.estimate(sone = example.data$s1, szero = example.data$s0,
     wone = example.data$w1, wzero = example.data$w0, szerop = example.data$s0.p,
     wzerop = example.data$w0.p, yzerop = example.data$y0.p)</code></pre>

@@ -28,7 +28,7 @@ data(example.data)
 names(example.data)
 ```
 
-Now let's use the main function to tests for a treatment effect on the primary outcome using surrogate
+Now let's use the main function to test for a treatment effect on the primary outcome using surrogate
 marker information in the current study, accounting for heterogeneity
 
 ```{r}
